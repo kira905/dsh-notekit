@@ -1,0 +1,27 @@
+{
+  "mark": "示例-2026XXXX",
+  "noteHeader": "<br>🪪 **订正注（2026-XX-XX · 卡「示例卡名」执行会话 · 只加注、判定列一字未动）**：",
+  "targets": [
+    {
+      "file": "X:\\docs\\example-table.md",
+      "label": "R-038行",
+      "anchor": { "mode": "prefix", "text": "| **R-038** |" },
+      "insert": "before-trailing-pipe",
+      "note": "本行加注正文（**禁含半角竖线**，否则器具直接拒动）。"
+    },
+    {
+      "file": "X:\\docs\\example-doc.md",
+      "label": "小节锚点",
+      "anchor": { "mode": "contains", "text": "- 归档说明：" },
+      "insert": "end",
+      "note": "行尾追加形态的注。"
+    },
+    {
+      "file": "X:\\docs\\example-doc.md",
+      "label": "多行块锚点",
+      "anchor": { "mode": "block", "text": "行 A\n行 B" },
+      "insert": "end",
+      "note": "多行块锚点：注落在块**末行**行尾。"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+node_modules/
+*.log
+*.tmp
+*.bak
+*.bak-*
+.DS_Store
+Thumbs.db
+_tmp/
+_archive/
+snapshots/
+backups/
+generated/
+logs/
+coverage/
+*.tgz
+# Runtime artefacts (manifests / before-copies produced by a run)
+*.manifest.json
+.before/

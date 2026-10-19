@@ -1,0 +1,49 @@
+{
+  "name": "@kira905/dsh-notekit",
+  "version": "0.1.0",
+  "description": "Anchor-based correction notes for production documents with byte-exact LIFO rollback: exactly-one-match anchors, idempotency guard, dry-run by default, transactional writes.",
+  "license": "AGPL-3.0-only",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "dsh-notekit-apply": "apply-note.mjs",
+    "dsh-notekit-restore": "restore-note.mjs"
+  },
+  "files": [
+    "apply-note.mjs",
+    "restore-note.mjs",
+    "selftest.mjs",
+    "drill.mjs",
+    "lib/",
+    "plans/",
+    "README.md",
+    "README.en.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "document-editing",
+    "anchor",
+    "correction-note",
+    "rollback",
+    "byte-exact",
+    "idempotent",
+    "markdown"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kira905/dsh-notekit.git"
+  },
+  "homepage": "https://github.com/kira905/dsh-notekit#readme",
+  "bugs": {
+    "url": "https://github.com/kira905/dsh-notekit/issues"
+  }
+}
