@@ -1,6 +1,6 @@
 {
   "name": "@kira905/dsh-notekit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Anchor-based correction notes for production documents with byte-exact LIFO rollback: exactly-one-match anchors, idempotency guard, dry-run by default, transactional writes.",
   "license": "AGPL-3.0-only",
   "private": false,
