@@ -1,5 +1,28 @@
 # dsh-notekit · 锚定式「加订正注 / 回滚」器具
 
+> ### 这是什么
+> **锚定式订正注**：往已有文档里插一段注，但保证"要么精确插一次，要么不插"。
+>
+> ### 它解决什么
+> 文档要订正时，最怕两件事：同一个锚点命中多处（插错地方）、同一条命令跑两遍（插两次）。这里把三个纪律做成机器闸门 —— ① **恰好命中一次**才动手 ② **幂等守卫**（新内容已存在就拒动）③ **默认 dry-run**，加 `--apply` 才写；回滚是严格 LIFO，按字节精确还原。
+>
+> ### 一条命令跑起来
+> ```powershell
+> npm i -g @kira905/dsh-notekit
+> dsh-notekit-apply --plan my-edits.json          # dry-run：只预检
+> dsh-notekit-apply --plan my-edits.json --apply  # 预检全绿才写
+> ```
+>
+> ### 先看它长什么样（真实输出）
+> ```text
+> dsh-notekit v1.0.0 · apply-note.mjs —— 锚定式加注（默认 dry-run）
+> 用法：
+>   node apply-note.mjs --plan <计划.json>                 # dry-run（只预检，不写盘）
+>   node apply-note.mjs --plan <计划.json> --apply         # 真写（预检全绿才写）
+> ```
+
+---
+
 > **本仓是命令行工具，不挂宿主界面，不需要 `dsh.bundle`、不需要写 `cordis.patch.yml`。** 装它 = `npm i -g @kira905/dsh-notekit`（或 `npx -p @kira905/dsh-notekit dsh-notekit-apply`）。装进 profile 也对，但那条 `declares no dsh.bundle` 警告是**正常现象**，不是故障。
 
 ## 装完自检（三条只读验法）
