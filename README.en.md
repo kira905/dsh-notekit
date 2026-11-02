@@ -1,5 +1,28 @@
 # dsh-notekit · Anchor-based Correction Notes with Byte-exact Rollback
 
+> ### What this is
+> **Anchor-based correction notes**: insert a note into an existing document and guarantee "either applied exactly once, or not at all".
+>
+> ### What it solves
+> Correcting a document has two classic failure modes: the anchor matches several places (note lands in the wrong one), and the same command runs twice (note inserted twice). Three disciplines become machine gates here — **exactly one match** or refuse, an **idempotency guard** that refuses when the new text already exists, and **dry-run by default** (`--apply` to write). Rollback is strict LIFO with byte-exact restore.
+>
+> ### Run it in one command
+> ```powershell
+> npm i -g @kira905/dsh-notekit
+> dsh-notekit-apply --plan my-edits.json          # dry-run: pre-check only
+> dsh-notekit-apply --plan my-edits.json --apply  # writes only if the pre-check is all green
+> ```
+>
+> ### Real output
+> ```text
+> dsh-notekit v1.0.0 · apply-note.mjs — anchor-based note insertion (dry-run by default)
+> Usage:
+>   node apply-note.mjs --plan <plan.json>                # dry-run
+>   node apply-note.mjs --plan <plan.json> --apply        # real write
+> ```
+
+---
+
 > Append a correction note to **one line of a production document**, then roll it back
 > **byte-for-byte** whenever you need to.
 >
